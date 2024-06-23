@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 Route::get('test', [PrimerControlador::class, 'index']);
 Route::get('test2', [SegundoControlador::class, 'index']);
+Route::get('otro/{post?}/{otro?}', [PrimerControlador::class, 'otro']);
