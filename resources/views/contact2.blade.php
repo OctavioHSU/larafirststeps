@@ -9,10 +9,7 @@
 </head>
 
 <body>
-    <h1>Hello World</h1>
-
-    <a href="http://larafirststeps.test/crud">CRUD</a>
-    <a href="{{ route('crud') }}">CRUD2</a>
+    <h1>CONTACT 2</h1>
 </body>
 
 </html>

@@ -6,21 +6,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* Route::get('/test', function () {
-    return "Welcome";
-}); */
+Route::get('/contact', function () {
+    return redirect()->route('contact2');
+    //return view('contact', ['name' => 'Octavio']);
+})->name('contact');
 
-Route::get('/test', function () {
-    return view('test');
-});
-
-/* Route::get('/crud', function () {
-    return view('crud/index');
-}); */
-
-Route::get('/crud', function () {
-    $age = 28;
-    $data = ['name' => 'Octavio', 'age' => $age];
-
-    return view('crud/index', $data);
-})->name('crud');
+Route::get('/contact2', function () {
+    return view('contact2');
+})->name('contact2');
