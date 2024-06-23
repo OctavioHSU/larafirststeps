@@ -1,17 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PrimerControlador;
+use App\Http\Controllers\SegundoControlador;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function () {
-    //return redirect()->route('contact2');
-
-    return view('contact', ['name' => 'Octavio']);
-})->name('contact');
-
-Route::get('/contact2', function () {
-    return view('contact2');
-})->name('contact2');
+Route::get('test', [PrimerControlador::class, 'index']);
+Route::get('test2', [SegundoControlador::class, 'index']);
