@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StoreRequest;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -22,18 +24,15 @@ class PostController extends Controller
      */
     public function create()
     {
-        //$categories = Category::get();
         $categories = Category::pluck('id', 'title');
 
         echo view('dashboard.post.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $data = array_merge($request->all(), ['image' => '']);
+        dd($data);
         Post::create($data);
     }
 
